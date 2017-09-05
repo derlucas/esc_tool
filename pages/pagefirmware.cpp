@@ -1,21 +1,9 @@
-/*
-    Copyright 2016 - 2017 Benjamin Vedder	benjamin@vedder.se
-
-    This file is part of VESC Tool.
-
-    VESC Tool is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    VESC Tool is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-    */
+/**
+ * This file is part of ESC Tool
+ *
+ *  Copyright 2016-2017 by it's authors. 
+ *  Some rights reserved. See COPYING, AUTHORS.
+ */
 
 #include "pagefirmware.h"
 #include "ui_pagefirmware.h"
@@ -204,7 +192,7 @@ void PageFirmware::on_uploadButton_clicked()
         if (!mVesc->isPortConnected()) {
             QMessageBox::critical(this,
                                   tr("Connection Error"),
-                                  tr("The VESC is not connected. Please connect it."));
+                                  tr("The ESC is not connected. Please connect it."));
             return;
         }
 
@@ -218,9 +206,9 @@ void PageFirmware::on_uploadButton_clicked()
                 if (ui->hwList->count() == 0) {
                     QMessageBox::warning(this,
                                          tr("Upload Error"),
-                                         tr("This version of VESC Tool does not include any firmware "
+                                         tr("This version of ESC Tool does not include any firmware "
                                             "for your hardware version. You can either "
-                                            "upload a custom file or look for a later version of VESC "
+                                            "upload a custom file or look for a later version of ESC "
                                             "Tool that might support your hardware."));
                 } else {
                     QMessageBox::warning(this,
@@ -250,7 +238,7 @@ void PageFirmware::on_uploadButton_clicked()
                 if (ui->blList->count() == 0) {
                     QMessageBox::warning(this,
                                          tr("Upload Error"),
-                                         tr("This version of VESC Tool does not include any bootloader "
+                                         tr("This version of ESC Tool does not include any bootloader "
                                             "for your hardware version."));
                 } else {
                     QMessageBox::warning(this,
@@ -282,7 +270,7 @@ void PageFirmware::on_uploadButton_clicked()
         if (ui->fwTabWidget->currentIndex() == 0 && ui->hwList->count() == 1) {
             reply = QMessageBox::warning(this,
                                          tr("Warning"),
-                                         tr("Uploading new firmware will clear all settings on your VESC "
+                                         tr("Uploading new firmware will clear all settings on your ESC "
                                             "and you have to do the configuration again. Do you want to "
                                             "continue?"),
                                          QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
@@ -290,14 +278,14 @@ void PageFirmware::on_uploadButton_clicked()
             reply = QMessageBox::warning(this,
                                          tr("Warning"),
                                          tr("Uploading firmware for the wrong hardware version "
-                                            "WILL damage the VESC for sure. Are you sure that you have "
+                                            "WILL damage the ESC for sure. Are you sure that you have "
                                             "chosen the correct hardware version?"),
                                          QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
         } else if (ui->fwTabWidget->currentIndex() == 2) {
             reply = QMessageBox::warning(this,
                                          tr("Warning"),
-                                         tr("This will attempt to upload a bootloader to the connected VESC. "
-                                            "If the connected VESC already has a bootloader this will destroy "
+                                         tr("This will attempt to upload a bootloader to the connected ESC. "
+                                            "If the connected ESC already has a bootloader this will destroy "
                                             "the bootloader and firmware updates cannot be done anymore. Do "
                                             "you want to continue?"),
                                          QMessageBox::Yes | QMessageBox::No, QMessageBox::No);

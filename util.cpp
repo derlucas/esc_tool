@@ -1,21 +1,9 @@
-/*
-    Copyright 2016 - 2017 Benjamin Vedder	benjamin@vedder.se
-
-    This file is part of VESC Tool.
-
-    VESC Tool is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    VESC Tool is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-    */
+/**
+ * This file is part of ESC Tool
+ *
+ *  Copyright 2016-2017 by it's authors. 
+ *  Some rights reserved. See COPYING, AUTHORS.
+ */
 
 #include "util.h"
 #include <cmath>
@@ -94,45 +82,13 @@ bool autoconnectBlockingWithProgress(VescInterface *vesc, QWidget *parent)
     if (!res) {
         vesc->messageDialog(QObject::tr("Autoconnect"),
                             QObject::tr("Could not autoconnect. Make sure that the USB cable is plugged in "
-                                        "and that the VESC is powered."),
+                                        "and that the ESC is powered."),
                             false);
     }
 
     return res;
 }
 
-void checkVersion(QString version, VescInterface *vesc)
-{
-    QUrl url("http://vesc-project.com/vesctool-version.html");
-    QNetworkAccessManager manager;
-    QNetworkRequest request(url);
-    QNetworkReply *reply = manager.get(request);
-    QEventLoop loop;
-    QObject::connect(reply, SIGNAL(finished()), &loop, SLOT(quit()));
-    loop.exec();
 
-    QString res = QString::fromUtf8(reply->readAll());
-
-    if (res.startsWith("vesctoolversion")) {
-        res.remove(0, 15);
-        res.remove(res.indexOf("vesctoolversion"), res.size());
-
-        if (res.toDouble() > version.toDouble()) {
-            if (vesc) {
-                vesc->statusMessage("A new version of VESC Tool is available", true);
-                vesc->messageDialog(QObject::tr("New Software Available"),
-                                    QObject::tr("A new version of VESC Tool is available. Go to "
-                                                "<a href=\"http://vesc-project.com/\">http://vesc-project.com/</a>"
-                                                " to download it and get all the latest features."),
-                                    true);
-            } else {
-                qDebug() << "A new version of VESC Tool is available. Go to vesc-project.com to download it "
-                            "and get all the latest features.";
-            }
-        }
-    } else {
-        qWarning() << res;
-    }
-}
 
 }

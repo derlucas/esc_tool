@@ -24,62 +24,7 @@ export PATH=/opt/Qt/5.7-static/bin:$PATH
 rm -rf build/lin/*
 
 # Original
-qmake -config release "CONFIG += release_lin build_original"
+qmake -config release "CONFIG += release_lin"
 make clean
 make -j4
 rm -rf build/lin/obj
-cd build/lin
-zip vesc_tool_original_linux.zip vesc_tool
-rm vesc_tool
-cd ../..
-
-# Platinum
-qmake -config release "CONFIG += release_lin build_platinum"
-make clean
-make -j4
-rm -rf build/lin/obj
-cd build/lin
-zip vesc_tool_platinum_linux.zip vesc_tool
-rm vesc_tool
-cd ../..
-
-# Gold
-qmake -config release "CONFIG += release_lin build_gold"
-make clean
-make -j4
-rm -rf build/lin/obj
-cd build/lin
-zip vesc_tool_gold_linux.zip vesc_tool
-rm vesc_tool
-cd ../..
-
-# Silver
-qmake -config release "CONFIG += release_lin build_silver"
-make clean
-make -j4
-rm -rf build/lin/obj
-cd build/lin
-zip vesc_tool_silver_linux.zip vesc_tool
-rm vesc_tool
-cd ../..
-
-# Bronze
-qmake -config release "CONFIG += release_lin build_bronze"
-make clean
-make -j4
-rm -rf build/lin/obj
-cd build/lin
-zip vesc_tool_bronze_linux.zip vesc_tool
-rm vesc_tool
-cd ../..
-
-# Free of charge
-qmake -config release "CONFIG += release_lin build_free"
-make clean
-make -j4
-rm -rf build/lin/obj
-cd build/lin
-zip vesc_tool_free_linux.zip vesc_tool
-rm vesc_tool
-cd ../..
-

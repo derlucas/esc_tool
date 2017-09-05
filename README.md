@@ -1,3 +1,4 @@
-This is a GUI written using the Qt toolkit to configure the VESC motor controller. Read more and download precompiled versions at
+This is a GUI written using the Qt toolkit to configure ESC motor controllers based on Benjamin Vedders work.
 
-http://vesc-project.com/
+
+This fork removes some unnecessary behaviour/stuff from the original Software.

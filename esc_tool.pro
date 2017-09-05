@@ -7,14 +7,6 @@
 # Serial port available
 DEFINES += HAS_SERIALPORT
 
-# Options
-#CONFIG += build_original
-#CONFIG += build_platinum
-#CONFIG += build_gold
-#CONFIG += build_silver
-#CONFIG += build_bronze
-#CONFIG += build_free
-
 QT       += core gui
 QT       += printsupport
 QT       += network
@@ -25,7 +17,7 @@ contains(DEFINES, HAS_SERIALPORT) {
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = vesc_tool
+TARGET = esc_tool
 TEMPLATE = app
 
 release_win {
@@ -59,8 +51,7 @@ SOURCES += main.cpp\
     digitalfiltering.cpp \
     setupwizardapp.cpp \
     setupwizardmotor.cpp \
-    util.cpp \
-    startupwizard.cpp
+    util.cpp
 
 HEADERS  += mainwindow.h \
     packet.h \
@@ -74,8 +65,7 @@ HEADERS  += mainwindow.h \
     digitalfiltering.h \
     setupwizardapp.h \
     setupwizardmotor.h \
-    util.h \
-    startupwizard.h
+    util.h
 
 FORMS    += mainwindow.ui \
     parametereditor.ui
@@ -85,32 +75,8 @@ include(widgets/widgets.pri)
 
 RESOURCES += res.qrc
 
-build_original {
-    RESOURCES += res_original.qrc \
-    res_fw_original.qrc
-    DEFINES += VER_ORIGINAL
-} else:build_platinum {
-    RESOURCES += res_platinum.qrc \
-    res_fw.qrc
-    DEFINES += VER_PLATINUM
-} else:build_gold {
-    RESOURCES += res_gold.qrc \
-    res_fw.qrc
-    DEFINES += VER_GOLD
-} else:build_silver {
-    RESOURCES += res_silver.qrc \
-    res_fw.qrc
-    DEFINES += VER_SILVER
-} else:build_bronze {
-    RESOURCES += res_bronze.qrc \
-    res_fw.qrc
-    DEFINES += VER_BRONZE
-} else:build_free {
-    RESOURCES += res_free.qrc \
-    res_fw.qrc
-    DEFINES += VER_FREE
-} else {
-    RESOURCES += res_neutral.qrc \
-    res_fw.qrc
-    DEFINES += VER_NEUTRAL
-}
+
+RESOURCES += res_neutral.qrc \
+res_fw.qrc
+DEFINES += VER_NEUTRAL
+

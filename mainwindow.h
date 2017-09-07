@@ -35,6 +35,7 @@
 #include "pages/pageappgeneral.h"
 #include "pages/pageappppm.h"
 #include "pages/pageappadc.h"
+#include "pages/pageappev.h"
 #include "pages/pageappuart.h"
 #include "pages/pageappnunchuk.h"
 #include "pages/pageappnrf.h"
@@ -138,6 +139,7 @@ private:
     PageAppGeneral *mPageAppGeneral;
     PageAppPpm *mPageAppPpm;
     PageAppAdc *mPageAppAdc;
+    PageAppEv *mPageAppEv;
     PageAppUart *mPageAppUart;
     PageAppNunchuk *mPageAppNunchuk;
     PageAppNrf *mPageAppNrf;

@@ -9,6 +9,7 @@ FORMS += \
     $$PWD/pagecontrollers.ui \
     $$PWD/pageappppm.ui \
     $$PWD/pageappadc.ui \
+    $$PWD/pageappev.ui \
     $$PWD/pageappuart.ui \
     $$PWD/pageappnunchuk.ui \
     $$PWD/pageappnrf.ui \
@@ -35,6 +36,7 @@ HEADERS += \
     $$PWD/pagecontrollers.h \
     $$PWD/pageappppm.h \
     $$PWD/pageappadc.h \
+    $$PWD/pageappev.h \
     $$PWD/pageappuart.h \
     $$PWD/pageappnunchuk.h \
     $$PWD/pageappnrf.h \
@@ -61,6 +63,7 @@ SOURCES += \
     $$PWD/pagecontrollers.cpp \
     $$PWD/pageappppm.cpp \
     $$PWD/pageappadc.cpp \
+    $$PWD/pageappev.cpp \
     $$PWD/pageappuart.cpp \
     $$PWD/pageappnunchuk.cpp \
     $$PWD/pageappnrf.cpp \

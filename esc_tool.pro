@@ -26,6 +26,7 @@ release_win {
     MOC_DIR = build/win/obj
     RCC_DIR = build/win/obj
     UI_DIR = build/win/obj
+		CONFIG += c++11
 }
 
 release_lin {

@@ -48,4 +48,5 @@ target_wrapper.*
 CMakeLists.txt.user*
 
 build/
-vesc_tool
+esc_tool
+

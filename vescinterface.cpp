@@ -369,7 +369,8 @@ QList<VSerialInfo_t> VescInterface::listSerialPorts()
         info.systemPath = port.systemLocation();
         int index = res.size();
 
-        if(port.manufacturer() == "STMicroelectronics") {
+        if(port.manufacturer() == "STMicroelectronics" || port.vendorIdentifier() == 0x0483) {
+					  // we are guessing here that any ST device connected is a VESC. This is not always true.
             info.name.insert(0, "ESC - ");
             info.isVesc = true;
             index = 0;

@@ -31,12 +31,14 @@ bool ParamTable::addParamRow(ConfigParams *params, QString paramName)
     bool res = false;
     QWidget *editor = params->getEditor(paramName);
     QString name = params->getLongName(paramName);
+    QString description = params->getDescription(paramName);
 
     if (editor) {
         int row = rowCount();
         setRowCount(row + 1);
         QTableWidgetItem *item = new QTableWidgetItem(name);
         item->setFlags(item->flags() & ~Qt::ItemIsEditable);
+        item->setToolTip(description);
         setItem(row, 0, item);
         setCellWidget(row, 1, editor);
         res = true;

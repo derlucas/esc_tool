@@ -14,7 +14,8 @@ FORMS += \
     $$PWD/adcmap.ui \
     $$PWD/nrfpair.ui \
     $$PWD/parameditstring.ui \
-    $$PWD/paramdialog.ui
+    $$PWD/paramdialog.ui \
+    $$PWD/adcmapev.ui
 
 HEADERS += \
     $$PWD/parameditbool.h \
@@ -42,7 +43,8 @@ HEADERS += \
     $$PWD/imagewidget.h \
     $$PWD/parameditstring.h \
     $$PWD/paramdialog.h \
-    $$PWD/aspectimglabel.h
+    $$PWD/aspectimglabel.h \
+    $$PWD/adcmapev.h
 
 SOURCES += \
     $$PWD/parameditbool.cpp \
@@ -70,5 +72,6 @@ SOURCES += \
     $$PWD/imagewidget.cpp \
     $$PWD/parameditstring.cpp \
     $$PWD/paramdialog.cpp \
-    $$PWD/aspectimglabel.cpp
+    $$PWD/aspectimglabel.cpp \
+    $$PWD/adcmapev.cpp
 

@@ -45,13 +45,12 @@ void PageAppEv::setVesc(VescInterface *vesc)
         ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.update_rate_hz");
         ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.ramp_time_pos");
         ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.ramp_time_neg");
-        ui->mappingTab->addParamRow(mVesc->appConfig(), "app_ev_conf.hyst");
 
         ui->generalTab->addRowSeparator(tr("Wheel and EV Config"));
         ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.use_display");
         ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.use_pas");
         ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.wheel_perimeter");
-        ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.pulse_per_revolution");
+        ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.use_pulse");
 
         ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.use_throttle");
         ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.use_throttle_brake");
@@ -64,6 +63,9 @@ void PageAppEv::setVesc(VescInterface *vesc)
         ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.mode_3_current");
         ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.mode_4_current");
         ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.mode_5_current");
+        ui->generalTab->addRowSeparator(tr("Push assist (usually mode 6)"));
+        ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.mode_6_current");
+        ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.mode_6_speed");
 
 
 
@@ -81,7 +83,7 @@ void PageAppEv::setVesc(VescInterface *vesc)
         ui->throttleCurveTab->addParamRow(mVesc->appConfig(), "app_ev_conf.throttle_exp_brake");
         ui->throttleCurveTab->addParamRow(mVesc->appConfig(), "app_ev_conf.throttle_exp_mode");
 
-        ui->adcMap->setVesc(mVesc);
+        ui->adcMapEv->setVesc(mVesc);
 
         connect(mVesc->appConfig(), SIGNAL(paramChangedDouble(QObject*,QString,double)),
                 this, SLOT(paramChangedDouble(QObject*,QString,double)));

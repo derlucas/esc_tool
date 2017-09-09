@@ -48,6 +48,7 @@ signals:
     void bldcDetectReceived(bldc_detect param);
     void decodedPpmReceived(double value, double last_len);
     void decodedAdcReceived(double value, double voltage, double value2, double voltage2);
+    void decodedEvReceived(double value, double voltage, double value2, double voltage2);
     void decodedChukReceived(double value);
     void motorRLReceived(double r, double l);
     void motorLinkageReceived(double flux_linkage);
@@ -82,6 +83,7 @@ public slots:
     void sendAlive();
     void getDecodedPpm();
     void getDecodedAdc();
+    void getDecodedEv();
     void getDecodedChuk();
     void setServoPos(double pos);
     void measureRL();

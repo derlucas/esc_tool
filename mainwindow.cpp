@@ -281,6 +281,7 @@ void MainWindow::timerSlot()
     // APP RT data
     if (ui->actionRtDataApp->isChecked()) {
         mVesc->commands()->getDecodedAdc();
+        mVesc->commands()->getDecodedEv();
         mVesc->commands()->getDecodedChuk();
         mVesc->commands()->getDecodedPpm();
     }

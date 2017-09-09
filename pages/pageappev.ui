@@ -41,7 +41,7 @@
         <widget class="ParamTable" name="mappingTab"/>
        </item>
        <item>
-        <widget class="AdcMap" name="adcMap" native="true"/>
+        <widget class="AdcMapEv" name="adcMapEv" native="true"/>
        </item>
       </layout>
      </widget>
@@ -95,9 +95,9 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>AdcMap</class>
+   <class>AdcMapEv</class>
    <extends>QWidget</extends>
-   <header>widgets/adcmap.h</header>
+   <header>widgets/adcmapev.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -114,6 +114,7 @@ p, li { white-space: pre-wrap; }
             <enumNames>ADC and UART</enumNames>
             <enumNames>Nunchuk (I2C, Nyko Kama)</enumNames>
             <enumNames>NRF</enumNames>
+            <enumNames>EV</enumNames>
             <enumNames>Custom User App</enumNames>
         </app_to_use>
         <app_ppm_conf.ctrl_type>
@@ -480,28 +481,6 @@ p, li { white-space: pre-wrap; }
             <suffix></suffix>
             <vTx>9</vTx>
         </app_ppm_conf.tc_max_diff>
-        <app_ev_conf.hyst>
-            <longName>Input Deadband</longName>
-            <type>1</type>
-            <transmittable>1</transmittable>
-            <description>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; ; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;Deadband region for the input.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
-            <cDefine>APPCONF_ADC_HYST</cDefine>
-            <editorDecimalsDouble>0</editorDecimalsDouble>
-            <editorScale>100</editorScale>
-            <editAsPercentage>0</editAsPercentage>
-            <maxDouble>1</maxDouble>
-            <minDouble>0</minDouble>
-            <showDisplay>1</showDisplay>
-            <stepDouble>1</stepDouble>
-            <valDouble>0.05</valDouble>
-            <vTxDoubleScale>1000</vTxDoubleScale>
-            <suffix> %</suffix>
-            <vTx>9</vTx>
-        </app_ev_conf.hyst>
         <app_ev_conf.voltage1_start>
             <longName>ADC1 Min Voltage</longName>
             <type>1</type>
@@ -645,30 +624,20 @@ p, li { white-space: pre-wrap; }
             <suffix> cm</suffix>
             <vTx>3</vTx>
         </app_ev_conf.wheel_perimeter>
-        <app_ev_conf.pulse_per_revolution>
-            <longName>Pulses per revolution</longName>
-            <type>2</type>
+        <app_ev_conf.use_pulse>
+            <longName>Use Pulses</longName>
+            <type>5</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; ; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;Pulse per Revolution of your Wheel.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;Use the detection of wheel revolutions with a Wheel Sensor.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif';&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;Usually this parameter is 1 pulse per rev.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif';&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;If you have two magnets in your wheel, set this to two.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
-            <cDefine>APPCONF_EV_PULSE_PER_REV</cDefine>
-            <editorScale>1</editorScale>
-            <editAsPercentage>0</editAsPercentage>
-            <maxInt>6</maxInt>
-            <minInt>1</minInt>
-            <showDisplay>0</showDisplay>
-            <stepInt>1</stepInt>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;Usually you can use the speed calculation based on motor eRPM with the configured wheel perimeter. But if you are using a motor with integrated gearbox and freewheel the motor can be stopped while you are still moving. Then use the Wheel Sensor+Magnet. (Like the old Bike Computers do)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
+            <cDefine>APPCONF_EV_USE_PULSE</cDefine>
             <valInt>1</valInt>
-            <suffix> ppr</suffix>
-            <vTx>1</vTx>
-        </app_ev_conf.pulse_per_revolution>
+        </app_ev_conf.use_pulse>
         <app_ev_conf.ramp_time_pos>
             <longName>Positive Ramping Time</longName>
             <type>1</type>
@@ -686,7 +655,7 @@ p, li { white-space: pre-wrap; }
             <minDouble>0</minDouble>
             <showDisplay>0</showDisplay>
             <stepDouble>0.1</stepDouble>
-            <valDouble>0.1</valDouble>
+            <valDouble>0.9</valDouble>
             <vTxDoubleScale>1000</vTxDoubleScale>
             <suffix> s</suffix>
             <vTx>9</vTx>
@@ -708,7 +677,7 @@ p, li { white-space: pre-wrap; }
             <minDouble>0</minDouble>
             <showDisplay>0</showDisplay>
             <stepDouble>0.1</stepDouble>
-            <valDouble>0.1</valDouble>
+            <valDouble>0.3</valDouble>
             <vTxDoubleScale>1000</vTxDoubleScale>
             <suffix> s</suffix>
             <vTx>9</vTx>
@@ -763,7 +732,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif';&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;If you disable analog throttle you can still use PAS mode. The motor will be started with the set current (Mode 1-5) when you start pedaling.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
             <cDefine>APPCONF_EV_USE_THROTTLE</cDefine>
-            <valInt>0</valInt>
+            <valInt>1</valInt>
         </app_ev_conf.use_throttle>
         <app_ev_conf.use_throttle_brake>
             <longName>Use throttle brake</longName>
@@ -989,6 +958,49 @@ p, li { white-space: pre-wrap; }
             <suffix> %</suffix>
             <vTx>9</vTx>
         </app_ev_conf.mode_5_current>
+        <app_ev_conf.mode_6_current>
+            <longName>Mode 6 current</longName>
+            <type>1</type>
+            <transmittable>1</transmittable>
+            <description>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; ; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;Mode 6 % current of max motor current.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;This Mode is usually configured for Push-Assist upto 7km/h&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
+            <cDefine>APPCONF_ADC_MODE_6_CURRENT</cDefine>
+            <editorDecimalsDouble>0</editorDecimalsDouble>
+            <editorScale>100</editorScale>
+            <editAsPercentage>0</editAsPercentage>
+            <maxDouble>1</maxDouble>
+            <minDouble>0</minDouble>
+            <showDisplay>1</showDisplay>
+            <stepDouble>1</stepDouble>
+            <valDouble>0.1</valDouble>
+            <vTxDoubleScale>1000</vTxDoubleScale>
+            <suffix> %</suffix>
+            <vTx>9</vTx>
+        </app_ev_conf.mode_6_current>
+        <app_ev_conf.mode_6_speed>
+            <longName>Mode 6 Speed</longName>
+            <type>2</type>
+            <transmittable>1</transmittable>
+            <description>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; ; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;Mode 6 maximum speed.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
+            <cDefine>APPCONF_ADC_MODE_6_SPEED</cDefine>
+            <editorScale>1</editorScale>
+            <editAsPercentage>0</editAsPercentage>
+            <maxInt>99</maxInt>
+            <minInt>1</minInt>
+            <showDisplay>0</showDisplay>
+            <stepInt>1</stepInt>
+            <valInt>7</valInt>
+            <suffix> km/h</suffix>
+            <vTx>1</vTx>
+        </app_ev_conf.mode_6_speed>
         <app_adc_conf.ctrl_type>
             <longName>Control Type</longName>
             <type>4</type>
@@ -1030,7 +1042,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Duty Cycle Reverse Button&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Duty cycle control with a button for inverting the throttle. The output is off when the input is at minimum.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
             <cDefine>APPCONF_ADC_CTRL_TYPE</cDefine>
-            <valInt>7</valInt>
+            <valInt>0</valInt>
             <enumNames>Off</enumNames>
             <enumNames>Current</enumNames>
             <enumNames>Current Reverse Center</enumNames>
@@ -1277,7 +1289,7 @@ p, li { white-space: pre-wrap; }
             <minDouble>-5</minDouble>
             <showDisplay>1</showDisplay>
             <stepDouble>1</stepDouble>
-            <valDouble>-0.5</valDouble>
+            <valDouble>0</valDouble>
             <vTxDoubleScale>1</vTxDoubleScale>
             <suffix></suffix>
             <vTx>9</vTx>
@@ -1310,7 +1322,7 @@ p, li { white-space: pre-wrap; }
             <minDouble>-5</minDouble>
             <showDisplay>1</showDisplay>
             <stepDouble>1</stepDouble>
-            <valDouble>1.5</valDouble>
+            <valDouble>0</valDouble>
             <vTxDoubleScale>1</vTxDoubleScale>
             <suffix></suffix>
             <vTx>9</vTx>
@@ -1985,5 +1997,30 @@ p, li { white-space: pre-wrap; }
         <ser>app_nrf_conf.address_1</ser>
         <ser>app_nrf_conf.address_2</ser>
         <ser>app_nrf_conf.send_crc_ack</ser>
+        <ser>app_ev_conf.voltage1_start</ser>
+        <ser>app_ev_conf.voltage1_end</ser>
+        <ser>app_ev_conf.voltage2_start</ser>
+        <ser>app_ev_conf.voltage2_end</ser>
+        <ser>app_ev_conf.use_filter</ser>
+        <ser>app_ev_conf.update_rate_hz</ser>
+        <ser>app_ev_conf.wheel_perimeter</ser>
+        <ser>app_ev_conf.use_pulse</ser>
+        <ser>app_ev_conf.ramp_time_pos</ser>
+        <ser>app_ev_conf.ramp_time_neg</ser>
+        <ser>app_ev_conf.use_display</ser>
+        <ser>app_ev_conf.use_display_vmax</ser>
+        <ser>app_ev_conf.use_pas</ser>
+        <ser>app_ev_conf.use_throttle</ser>
+        <ser>app_ev_conf.use_throttle_brake</ser>
+        <ser>app_ev_conf.throttle_exp</ser>
+        <ser>app_ev_conf.throttle_exp_brake</ser>
+        <ser>app_ev_conf.throttle_exp_mode</ser>
+        <ser>app_ev_conf.mode_1_current</ser>
+        <ser>app_ev_conf.mode_2_current</ser>
+        <ser>app_ev_conf.mode_3_current</ser>
+        <ser>app_ev_conf.mode_4_current</ser>
+        <ser>app_ev_conf.mode_5_current</ser>
+        <ser>app_ev_conf.mode_6_current</ser>
+        <ser>app_ev_conf.mode_6_speed</ser>
     </SerOrder>
 </ConfigParams>

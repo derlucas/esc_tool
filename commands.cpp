@@ -214,6 +214,15 @@ void Commands::processPacket(QByteArray data)
         emit decodedAdcReceived(dec_adc, dec_adc_voltage, dec_adc2, dec_adc_voltage2);
     } break;
 
+    case COMM_GET_DECODED_EV: {
+        // this may seem redundant, but this app will get more parameters live sampled, like display status etc.
+        double dec_adc1 = vb.vbPopFrontDouble32(1e6);
+        double dec_adc_voltage1 = vb.vbPopFrontDouble32(1e6);
+        double dec_adc2 = vb.vbPopFrontDouble32(1e6);
+        double dec_adc_voltage2 = vb.vbPopFrontDouble32(1e6);
+        emit decodedEvReceived(dec_adc1, dec_adc_voltage1, dec_adc2, dec_adc_voltage2);
+    } break;
+
     case COMM_GET_DECODED_CHUK:
         emit decodedChukReceived(vb.vbPopFrontDouble32(1000000.0));
         break;
@@ -417,6 +426,13 @@ void Commands::getDecodedAdc()
 {
     VByteArray vb;
     vb.vbAppendInt8(COMM_GET_DECODED_ADC);
+    emitData(vb);
+}
+
+void Commands::getDecodedEv()
+{
+    VByteArray vb;
+    vb.vbAppendInt8(COMM_GET_DECODED_EV);
     emitData(vb);
 }
 

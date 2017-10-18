@@ -629,7 +629,7 @@ p, li { white-space: pre-wrap; }
             <minDouble>1</minDouble>
             <showDisplay>0</showDisplay>
             <stepDouble>0.1</stepDouble>
-            <valDouble>2659.6</valDouble>
+            <valDouble>2659.4</valDouble>
             <vTxDoubleScale>1</vTxDoubleScale>
             <suffix> </suffix>
             <vTx>9</vTx>
@@ -646,7 +646,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif';&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;Usually you can use the speed calculation based on motor eRPM with the configured wheel/gearing factor. But if you are using a motor with integrated gearbox and freewheel the motor can be stopped while you are still moving. Then use the Wheel Sensor+Magnet. (Like the old Bike Computers do)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
             <cDefine>APPCONF_EV_USE_PULSE</cDefine>
-            <valInt>1</valInt>
+            <valInt>0</valInt>
         </app_ev_conf.use_pulse>
         <app_ev_conf.ramp_time_pos>
             <longName>Positive Ramping Time</longName>
@@ -702,7 +702,7 @@ p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; ; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;Select if you want to use S-LCD3 Display. This need to be connected via RX/TX Pins.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
             <cDefine>APPCONF_EV_USE_DISPLAY</cDefine>
-            <valInt>0</valInt>
+            <valInt>1</valInt>
         </app_ev_conf.use_display>
         <app_ev_conf.use_display_vmax>
             <longName>Use Display Vmax</longName>
@@ -728,7 +728,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif';&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;You have to connect your PAS Sensor on Pin PPM.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
             <cDefine>APPCONF_EV_USE_PAS</cDefine>
-            <valInt>1</valInt>
+            <valInt>0</valInt>
         </app_ev_conf.use_pas>
         <app_ev_conf.use_throttle>
             <longName>Use throttle</longName>
@@ -1003,13 +1003,13 @@ p, li { white-space: pre-wrap; }
             <cDefine>APPCONF_ADC_MODE_6_SPEED</cDefine>
             <editorScale>1</editorScale>
             <editAsPercentage>0</editAsPercentage>
-            <maxInt>99</maxInt>
-            <minInt>1</minInt>
+            <maxInt>15000</maxInt>
+            <minInt>800</minInt>
             <showDisplay>0</showDisplay>
             <stepInt>1</stepInt>
-            <valInt>7</valInt>
-            <suffix> km/h</suffix>
-            <vTx>1</vTx>
+            <valInt>2000</valInt>
+            <suffix> eRPM</suffix>
+            <vTx>5</vTx>
         </app_ev_conf.mode_6_speed>
         <app_adc_conf.ctrl_type>
             <longName>Control Type</longName>

@@ -105,7 +105,7 @@ p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; ; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;The APP to use. With multiple ESC connected over CAN only the master needs to have an app to use set up. Notice that using the NRF nunchuk needs the NRF app.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
             <cDefine>APPCONF_APP_TO_USE</cDefine>
-            <valInt>3</valInt>
+            <valInt>0</valInt>
             <enumNames>No App</enumNames>
             <enumNames>PPM</enumNames>
             <enumNames>ADC</enumNames>
@@ -408,7 +408,7 @@ p, li { white-space: pre-wrap; }
             <minDouble>0</minDouble>
             <showDisplay>0</showDisplay>
             <stepDouble>0.1</stepDouble>
-            <valDouble>0.9</valDouble>
+            <valDouble>0.3</valDouble>
             <vTxDoubleScale>1000</vTxDoubleScale>
             <suffix> s</suffix>
             <vTx>9</vTx>
@@ -430,7 +430,7 @@ p, li { white-space: pre-wrap; }
             <minDouble>0</minDouble>
             <showDisplay>0</showDisplay>
             <stepDouble>0.1</stepDouble>
-            <valDouble>0.3</valDouble>
+            <valDouble>0.1</valDouble>
             <vTxDoubleScale>1000</vTxDoubleScale>
             <suffix> s</suffix>
             <vTx>9</vTx>
@@ -498,7 +498,7 @@ p, li { white-space: pre-wrap; }
             <minDouble>0</minDouble>
             <showDisplay>1</showDisplay>
             <stepDouble>0.01</stepDouble>
-            <valDouble>0.9</valDouble>
+            <valDouble>0.2</valDouble>
             <vTxDoubleScale>1000</vTxDoubleScale>
             <suffix> V</suffix>
             <vTx>9</vTx>
@@ -521,7 +521,7 @@ p, li { white-space: pre-wrap; }
             <minDouble>0</minDouble>
             <showDisplay>1</showDisplay>
             <stepDouble>0.01</stepDouble>
-            <valDouble>3</valDouble>
+            <valDouble>3.2</valDouble>
             <vTxDoubleScale>1000</vTxDoubleScale>
             <suffix> V</suffix>
             <vTx>9</vTx>
@@ -543,7 +543,7 @@ p, li { white-space: pre-wrap; }
             <minDouble>0</minDouble>
             <showDisplay>1</showDisplay>
             <stepDouble>0.01</stepDouble>
-            <valDouble>0.9</valDouble>
+            <valDouble>0.2</valDouble>
             <vTxDoubleScale>1000</vTxDoubleScale>
             <suffix> V</suffix>
             <vTx>9</vTx>
@@ -565,7 +565,7 @@ p, li { white-space: pre-wrap; }
             <minDouble>0</minDouble>
             <showDisplay>1</showDisplay>
             <stepDouble>0.01</stepDouble>
-            <valDouble>3</valDouble>
+            <valDouble>3.2</valDouble>
             <vTxDoubleScale>1000</vTxDoubleScale>
             <suffix> V</suffix>
             <vTx>9</vTx>
@@ -598,43 +598,53 @@ p, li { white-space: pre-wrap; }
             <minInt>0</minInt>
             <showDisplay>0</showDisplay>
             <stepInt>10</stepInt>
-            <valInt>500</valInt>
+            <valInt>100</valInt>
             <suffix> Hz</suffix>
             <vTx>3</vTx>
         </app_ev_conf.update_rate_hz>
-        <app_ev_conf.wheel_perimeter>
-            <longName>Wheel perimeter</longName>
-            <type>2</type>
+        <app_ev_conf.wheel_factor>
+            <longName>Wheel factor</longName>
+            <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; ; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;The perimeter / circumference of your wheel where the motor is attached to.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif';&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;Please input in centimeters.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The factor between the motor ERPM and actual RPM of your wheel.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This is usually calculated with this formula:&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(motor_poles / 2.0) / gear_ratio&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You can however let the motor spin with, say 1000 ERPM and then measure the actual RPM by counting.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Example:&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;spin with 3000eRPM gives 1,127 RPM: value is = 2661,9&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
             <cDefine>APPCONF_EV_WHEEL_PERIMETER</cDefine>
+            <editorDecimalsDouble>2</editorDecimalsDouble>
             <editorScale>1</editorScale>
             <editAsPercentage>0</editAsPercentage>
-            <maxInt>300</maxInt>
-            <minInt>5</minInt>
+            <maxDouble>20000</maxDouble>
+            <minDouble>1</minDouble>
             <showDisplay>0</showDisplay>
-            <stepInt>1</stepInt>
-            <valInt>210</valInt>
-            <suffix> cm</suffix>
-            <vTx>3</vTx>
-        </app_ev_conf.wheel_perimeter>
+            <stepDouble>0.1</stepDouble>
+            <valDouble>2659.6</valDouble>
+            <vTxDoubleScale>1</vTxDoubleScale>
+            <suffix> </suffix>
+            <vTx>9</vTx>
+        </app_ev_conf.wheel_factor>
         <app_ev_conf.use_pulse>
-            <longName>Use Pulses</longName>
+            <longName>Use Pulses Input</longName>
             <type>5</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; ; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;Use the detection of wheel revolutions with a Wheel Sensor.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;Use the detection of wheel revolutions with a Wheel Sensor connected to the SWDIO Pin.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif';&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;Usually you can use the speed calculation based on motor eRPM with the configured wheel perimeter. But if you are using a motor with integrated gearbox and freewheel the motor can be stopped while you are still moving. Then use the Wheel Sensor+Magnet. (Like the old Bike Computers do)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;Usually you can use the speed calculation based on motor eRPM with the configured wheel/gearing factor. But if you are using a motor with integrated gearbox and freewheel the motor can be stopped while you are still moving. Then use the Wheel Sensor+Magnet. (Like the old Bike Computers do)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
             <cDefine>APPCONF_EV_USE_PULSE</cDefine>
             <valInt>1</valInt>
         </app_ev_conf.use_pulse>
@@ -655,7 +665,7 @@ p, li { white-space: pre-wrap; }
             <minDouble>0</minDouble>
             <showDisplay>0</showDisplay>
             <stepDouble>0.1</stepDouble>
-            <valDouble>0.9</valDouble>
+            <valDouble>0.2</valDouble>
             <vTxDoubleScale>1000</vTxDoubleScale>
             <suffix> s</suffix>
             <vTx>9</vTx>
@@ -677,7 +687,7 @@ p, li { white-space: pre-wrap; }
             <minDouble>0</minDouble>
             <showDisplay>0</showDisplay>
             <stepDouble>0.1</stepDouble>
-            <valDouble>0.3</valDouble>
+            <valDouble>0</valDouble>
             <vTxDoubleScale>1000</vTxDoubleScale>
             <suffix> s</suffix>
             <vTx>9</vTx>
@@ -704,7 +714,7 @@ p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; ; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The Display has a configurable max speed for your vehicle. This setting allow the ESC to ignore this setting.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
             <cDefine>APPCONF_EV_USE_DISPLAY_VMAX</cDefine>
-            <valInt>1</valInt>
+            <valInt>0</valInt>
         </app_ev_conf.use_display_vmax>
         <app_ev_conf.use_pas>
             <longName>Enable PAS Mode</longName>
@@ -718,7 +728,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif';&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;You have to connect your PAS Sensor on Pin PPM.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
             <cDefine>APPCONF_EV_USE_PAS</cDefine>
-            <valInt>0</valInt>
+            <valInt>1</valInt>
         </app_ev_conf.use_pas>
         <app_ev_conf.use_throttle>
             <longName>Use throttle</longName>
@@ -2003,7 +2013,7 @@ p, li { white-space: pre-wrap; }
         <ser>app_ev_conf.voltage2_end</ser>
         <ser>app_ev_conf.use_filter</ser>
         <ser>app_ev_conf.update_rate_hz</ser>
-        <ser>app_ev_conf.wheel_perimeter</ser>
+        <ser>app_ev_conf.wheel_factor</ser>
         <ser>app_ev_conf.use_pulse</ser>
         <ser>app_ev_conf.ramp_time_pos</ser>
         <ser>app_ev_conf.ramp_time_neg</ser>

@@ -49,7 +49,7 @@ void PageAppEv::setVesc(VescInterface *vesc)
         ui->generalTab->addRowSeparator(tr("Wheel and EV Config"));
         ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.use_display");
         ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.use_pas");
-        ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.wheel_perimeter");
+        ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.wheel_factor");
         ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.use_pulse");
 
         ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.use_throttle");

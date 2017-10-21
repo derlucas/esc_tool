@@ -15,7 +15,8 @@ FORMS += \
     $$PWD/nrfpair.ui \
     $$PWD/parameditstring.ui \
     $$PWD/paramdialog.ui \
-    $$PWD/adcmapev.ui
+    $$PWD/adcmapev.ui \
+    $$PWD/erpmcalculator.ui
 
 HEADERS += \
     $$PWD/parameditbool.h \
@@ -44,7 +45,8 @@ HEADERS += \
     $$PWD/parameditstring.h \
     $$PWD/paramdialog.h \
     $$PWD/aspectimglabel.h \
-    $$PWD/adcmapev.h
+    $$PWD/adcmapev.h \
+    $$PWD/erpmcalculator.h
 
 SOURCES += \
     $$PWD/parameditbool.cpp \
@@ -73,5 +75,6 @@ SOURCES += \
     $$PWD/parameditstring.cpp \
     $$PWD/paramdialog.cpp \
     $$PWD/aspectimglabel.cpp \
-    $$PWD/adcmapev.cpp
+    $$PWD/adcmapev.cpp \
+    $$PWD/erpmcalculator.cpp
 

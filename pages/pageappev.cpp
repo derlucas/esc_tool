@@ -50,22 +50,29 @@ void PageAppEv::setVesc(VescInterface *vesc)
         ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.use_display");
         ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.use_pas");
         ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.wheel_factor");
+        ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.wheel_diameter");
         ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.use_pulse");
-
+        ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.use_throttle_wo_pas");
+				
         ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.use_throttle");
         ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.use_throttle_brake");
         ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.use_display_vmax");
 
 
-        ui->generalTab->addRowSeparator(tr("Power Modes (0: off)"));
-        ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.mode_1_current");
-        ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.mode_2_current");
-        ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.mode_3_current");
-        ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.mode_4_current");
-        ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.mode_5_current");
-        ui->generalTab->addRowSeparator(tr("Push assist (usually mode 6)"));
-        ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.mode_6_current");
-        ui->generalTab->addParamRow(mVesc->appConfig(), "app_ev_conf.mode_6_speed");
+        ui->gearsTab->addRowSeparator(tr("Power Modes (0: off)"));
+        ui->gearsTab->addParamRow(mVesc->appConfig(), "app_ev_conf.mode_1_current");
+        ui->gearsTab->addParamRow(mVesc->appConfig(), "app_ev_conf.mode_1_speed");
+        ui->gearsTab->addParamRow(mVesc->appConfig(), "app_ev_conf.mode_2_current");
+        ui->gearsTab->addParamRow(mVesc->appConfig(), "app_ev_conf.mode_2_speed");
+        ui->gearsTab->addParamRow(mVesc->appConfig(), "app_ev_conf.mode_3_current");
+        ui->gearsTab->addParamRow(mVesc->appConfig(), "app_ev_conf.mode_3_speed");
+        ui->gearsTab->addParamRow(mVesc->appConfig(), "app_ev_conf.mode_4_current");
+        ui->gearsTab->addParamRow(mVesc->appConfig(), "app_ev_conf.mode_4_speed");
+        ui->gearsTab->addParamRow(mVesc->appConfig(), "app_ev_conf.mode_5_current");
+        ui->gearsTab->addParamRow(mVesc->appConfig(), "app_ev_conf.mode_5_speed");
+        ui->gearsTab->addRowSeparator(tr("Push assist (usually mode 6)"));
+        ui->gearsTab->addParamRow(mVesc->appConfig(), "app_ev_conf.mode_6_current");
+        ui->gearsTab->addParamRow(mVesc->appConfig(), "app_ev_conf.mode_6_speed");
 
 
 

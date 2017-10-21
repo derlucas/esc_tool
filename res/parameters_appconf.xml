@@ -621,7 +621,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Example:&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;spin with 3000eRPM gives 1,127 RPM: value is = 2661,9&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
-            <cDefine>APPCONF_EV_WHEEL_PERIMETER</cDefine>
+            <cDefine>APPCONF_EV_WHEEL_FACTOR</cDefine>
             <editorDecimalsDouble>2</editorDecimalsDouble>
             <editorScale>1</editorScale>
             <editAsPercentage>0</editAsPercentage>
@@ -629,11 +629,33 @@ p, li { white-space: pre-wrap; }
             <minDouble>1</minDouble>
             <showDisplay>0</showDisplay>
             <stepDouble>0.1</stepDouble>
-            <valDouble>2659.4</valDouble>
+            <valDouble>2659.5</valDouble>
             <vTxDoubleScale>1</vTxDoubleScale>
             <suffix> </suffix>
             <vTx>9</vTx>
         </app_ev_conf.wheel_factor>
+        <app_ev_conf.wheel_diameter>
+            <longName>Wheel diameter</longName>
+            <type>1</type>
+            <transmittable>1</transmittable>
+            <description>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; ; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Wheel diameter in cm&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
+            <cDefine>APPCONF_EV_WHEEL_DIAMETER</cDefine>
+            <editorDecimalsDouble>1</editorDecimalsDouble>
+            <editorScale>1</editorScale>
+            <editAsPercentage>0</editAsPercentage>
+            <maxDouble>200</maxDouble>
+            <minDouble>1</minDouble>
+            <showDisplay>0</showDisplay>
+            <stepDouble>1</stepDouble>
+            <valDouble>71</valDouble>
+            <vTxDoubleScale>1</vTxDoubleScale>
+            <suffix> cm</suffix>
+            <vTx>9</vTx>
+        </app_ev_conf.wheel_diameter>
         <app_ev_conf.use_pulse>
             <longName>Use Pulses Input</longName>
             <type>5</type>
@@ -728,7 +750,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif';&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;You have to connect your PAS Sensor on Pin PPM.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
             <cDefine>APPCONF_EV_USE_PAS</cDefine>
-            <valInt>0</valInt>
+            <valInt>1</valInt>
         </app_ev_conf.use_pas>
         <app_ev_conf.use_throttle>
             <longName>Use throttle</longName>
@@ -744,6 +766,18 @@ p, li { white-space: pre-wrap; }
             <cDefine>APPCONF_EV_USE_THROTTLE</cDefine>
             <valInt>1</valInt>
         </app_ev_conf.use_throttle>
+        <app_ev_conf.use_throttle_wo_pas>
+            <longName>Throttle w/o PAS</longName>
+            <type>5</type>
+            <transmittable>1</transmittable>
+            <description>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; ; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Allow Throttle regardles of PAS status.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
+            <cDefine>APPCONF_EV_USE_THROTTLE</cDefine>
+            <valInt>1</valInt>
+        </app_ev_conf.use_throttle_wo_pas>
         <app_ev_conf.use_throttle_brake>
             <longName>Use throttle brake</longName>
             <type>5</type>
@@ -991,6 +1025,106 @@ p, li { white-space: pre-wrap; }
             <suffix> %</suffix>
             <vTx>9</vTx>
         </app_ev_conf.mode_6_current>
+        <app_ev_conf.mode_1_speed>
+            <longName>Mode 1 Max Speed</longName>
+            <type>2</type>
+            <transmittable>1</transmittable>
+            <description>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; ; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;Mode 1 maximum speed.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
+            <cDefine>APPCONF_ADC_MODE_1_SPEED</cDefine>
+            <editorScale>1</editorScale>
+            <editAsPercentage>0</editAsPercentage>
+            <maxInt>100000</maxInt>
+            <minInt>100</minInt>
+            <showDisplay>0</showDisplay>
+            <stepInt>100</stepInt>
+            <valInt>8300</valInt>
+            <suffix> eRPM</suffix>
+            <vTx>5</vTx>
+        </app_ev_conf.mode_1_speed>
+        <app_ev_conf.mode_2_speed>
+            <longName>Mode 2 Max Speed</longName>
+            <type>2</type>
+            <transmittable>1</transmittable>
+            <description>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; ; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;Mode 2 maximum speed.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
+            <cDefine>APPCONF_ADC_MODE_2_SPEED</cDefine>
+            <editorScale>1</editorScale>
+            <editAsPercentage>0</editAsPercentage>
+            <maxInt>100000</maxInt>
+            <minInt>100</minInt>
+            <showDisplay>0</showDisplay>
+            <stepInt>100</stepInt>
+            <valInt>8300</valInt>
+            <suffix> eRPM</suffix>
+            <vTx>5</vTx>
+        </app_ev_conf.mode_2_speed>
+        <app_ev_conf.mode_3_speed>
+            <longName>Mode 3 Max Speed</longName>
+            <type>2</type>
+            <transmittable>1</transmittable>
+            <description>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; ; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;Mode 3 maximum speed.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
+            <cDefine>APPCONF_ADC_MODE_3_SPEED</cDefine>
+            <editorScale>1</editorScale>
+            <editAsPercentage>0</editAsPercentage>
+            <maxInt>100000</maxInt>
+            <minInt>100</minInt>
+            <showDisplay>0</showDisplay>
+            <stepInt>100</stepInt>
+            <valInt>8300</valInt>
+            <suffix> eRPM</suffix>
+            <vTx>5</vTx>
+        </app_ev_conf.mode_3_speed>
+        <app_ev_conf.mode_4_speed>
+            <longName>Mode 4 Max Speed</longName>
+            <type>2</type>
+            <transmittable>1</transmittable>
+            <description>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; ; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;Mode 4 maximum speed.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
+            <cDefine>APPCONF_ADC_MODE_4_SPEED</cDefine>
+            <editorScale>1</editorScale>
+            <editAsPercentage>0</editAsPercentage>
+            <maxInt>100000</maxInt>
+            <minInt>100</minInt>
+            <showDisplay>0</showDisplay>
+            <stepInt>100</stepInt>
+            <valInt>8300</valInt>
+            <suffix> eRPM</suffix>
+            <vTx>5</vTx>
+        </app_ev_conf.mode_4_speed>
+        <app_ev_conf.mode_5_speed>
+            <longName>Mode 5 Max Speed</longName>
+            <type>2</type>
+            <transmittable>1</transmittable>
+            <description>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; ; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;Mode 5 maximum speed.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
+            <cDefine>APPCONF_ADC_MODE_5_SPEED</cDefine>
+            <editorScale>1</editorScale>
+            <editAsPercentage>0</editAsPercentage>
+            <maxInt>100000</maxInt>
+            <minInt>100</minInt>
+            <showDisplay>0</showDisplay>
+            <stepInt>100</stepInt>
+            <valInt>8300</valInt>
+            <suffix> eRPM</suffix>
+            <vTx>5</vTx>
+        </app_ev_conf.mode_5_speed>
         <app_ev_conf.mode_6_speed>
             <longName>Mode 6 Speed</longName>
             <type>2</type>
@@ -1007,7 +1141,7 @@ p, li { white-space: pre-wrap; }
             <minInt>800</minInt>
             <showDisplay>0</showDisplay>
             <stepInt>1</stepInt>
-            <valInt>2000</valInt>
+            <valInt>2300</valInt>
             <suffix> eRPM</suffix>
             <vTx>5</vTx>
         </app_ev_conf.mode_6_speed>
@@ -2014,12 +2148,14 @@ p, li { white-space: pre-wrap; }
         <ser>app_ev_conf.use_filter</ser>
         <ser>app_ev_conf.update_rate_hz</ser>
         <ser>app_ev_conf.wheel_factor</ser>
+        <ser>app_ev_conf.wheel_diameter</ser>
         <ser>app_ev_conf.use_pulse</ser>
         <ser>app_ev_conf.ramp_time_pos</ser>
         <ser>app_ev_conf.ramp_time_neg</ser>
         <ser>app_ev_conf.use_display</ser>
         <ser>app_ev_conf.use_display_vmax</ser>
         <ser>app_ev_conf.use_pas</ser>
+        <ser>app_ev_conf.use_throttle_wo_pas</ser>
         <ser>app_ev_conf.use_throttle</ser>
         <ser>app_ev_conf.use_throttle_brake</ser>
         <ser>app_ev_conf.throttle_exp</ser>
@@ -2031,6 +2167,11 @@ p, li { white-space: pre-wrap; }
         <ser>app_ev_conf.mode_4_current</ser>
         <ser>app_ev_conf.mode_5_current</ser>
         <ser>app_ev_conf.mode_6_current</ser>
+        <ser>app_ev_conf.mode_1_speed</ser>
+        <ser>app_ev_conf.mode_2_speed</ser>
+        <ser>app_ev_conf.mode_3_speed</ser>
+        <ser>app_ev_conf.mode_4_speed</ser>
+        <ser>app_ev_conf.mode_5_speed</ser>
         <ser>app_ev_conf.mode_6_speed</ser>
     </SerOrder>
 </ConfigParams>
